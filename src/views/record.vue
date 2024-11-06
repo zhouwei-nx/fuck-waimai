@@ -13,7 +13,7 @@ const handleFullScreen = () => {
 const assetsImg = (filename: string) => new URL(`/src/assets/images/${filename}`, import.meta.url).href;
 
 const imgContent = ref(assetsImg('screen.jpg'))
-const afterRead = (file) => {
+const afterRead = (file: any) => {
     // 此时可以自行将文件上传至服务器
     imgContent.value = file.objectUrl
 };
@@ -25,7 +25,7 @@ const sheetTollage = () => {
 const slideValue = ref(15);
 const windowHeight = window.innerHeight
 const cropHeight = ref(windowHeight * 0.15)
-const onChange = (value) => {
+const onChange = (value: number) => {
     cropHeight.value = windowHeight * value * 0.01
 }
 </script>
